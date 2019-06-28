@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="常见的一些进度条" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp">
+
+        <ProgressBar
+            android:id="@+id/pb_y"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateDrawable="@drawable/pb_y" />
+
+        <com.ly.progressreport.MyCirclePB
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <com.ly.progressreport.WaveProgressView
+            android:id="@+id/wave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:wave_bg_color="@color/gray_light"
+            app:wave_color="@color/bule" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="100%" />
+    </FrameLayout>
+
+    <SeekBar
+        android:id="@+id/seekbar_android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp" />
+
+    <FrameLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <SeekBar
+            android:id="@+id/seekbar_my_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" />
+
+        <SeekBar
+            android:id="@+id/seekbar_my_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" />
+    </FrameLayout>
+
+    <SeekBar
+        android:id="@+id/seekbar_my_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:progressDrawable="@android:color/holo_blue_bright" />
+
+    <RelativeLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp">
+
+        <com.ly.progressreport.MySeekBar
+            android:id="@+id/seekbar_my_4"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_centerInParent="true"
+            app:seek_background="@color/gray"
+            app:seek_button_color="@color/white"
+            app:seek_height="5dp"
+            app:seek_over_background="@color/white_litle"
+            app:seek_width="165dp" />
+    </RelativeLayout>
+</LinearLayout>
