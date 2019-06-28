@@ -26,6 +26,7 @@ public class MySeekBar extends View {
     Paint bgP = new Paint();
     Paint bP = new Paint();
     Paint overp = new Paint();
+    private SetOnSeekBarChangeListener setOnSeekBarChangeListener;
 
     public MySeekBar(Context context) {
         super(context);
@@ -101,15 +102,23 @@ public class MySeekBar extends View {
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                Log.d("lylog", "DOWN");
                 break;
             case MotionEvent.ACTION_MOVE:
-                Log.d("lylog", "MOVE");
+                float x1 = event.getX();
+                setProgress((int) (x1*100/pgw));
+                setOnSeekBarChangeListener.onProgressChanged((int)x1*100/pgw);
                 break;
             case MotionEvent.ACTION_UP:
-                Log.d("lylog", "UP");
                 break;
         }
         return super.onTouchEvent(event);
+    }
+
+    public interface  SetOnSeekBarChangeListener{
+          void onProgressChanged(int position);
+    }
+
+    public void setOnSeekBarChangeListener(SetOnSeekBarChangeListener setOnSeekBarChangeListener) {
+        this.setOnSeekBarChangeListener = setOnSeekBarChangeListener;
     }
 }

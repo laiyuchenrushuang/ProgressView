@@ -1,5 +1,6 @@
 package com.ly.progressreport;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
@@ -10,6 +11,7 @@ import android.util.Log;
 import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -38,6 +40,13 @@ public class MainActivity extends AppCompatActivity implements WaveProgressView.
     private void initSeekbar4() {
         seekbar_my_4 = findViewById(R.id.seekbar_my_4);
         ThreadSleep.mthreadrun(seekbar_my_4);
+        seekbar_my_4.setOnSeekBarChangeListener(new MySeekBar.SetOnSeekBarChangeListener() {
+            @SuppressLint("WrongConstant")
+            @Override
+            public void onProgressChanged(int position) {
+                Toast.makeText(MainActivity.this,"position = "+position,500).show();
+            }
+        });
     }
 
     private void initSeekbar3() {
